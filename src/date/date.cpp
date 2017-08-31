@@ -15,6 +15,15 @@ else if(year < 0){
     }
 }
 
+bool Date::operator==(const Date& rhs) const{
+	
+	if (_day == rhs._day && _month == rhs._month &&_year == rhs._year ){
+		return true;
+	}else{
+	return false;}
+}
+
+
 int Date::day() const
 {
 	return _day;

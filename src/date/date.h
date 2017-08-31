@@ -29,6 +29,7 @@ class Date
 {
 public:	
    Date(int day, Month month, int year);
+   	bool operator==(const Date& rhs) const;
 	// return the day of the month
 	int	day () const;
 	// return the month of the year
