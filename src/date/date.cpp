@@ -5,7 +5,14 @@
 
 Date::Date(int day, Month month, int year):_day{day},_month{month},_year{year}
 {
+	if(daysInMonth()<day ||day<=0 ){
 	
+	throw InvalidDate();
+}
+else if(year < 0){
+	 
+        throw InvalidDate();
+    }
 }
 
 int Date::day() const
