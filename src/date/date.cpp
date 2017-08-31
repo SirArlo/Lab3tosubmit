@@ -23,6 +23,22 @@ bool Date::operator==(const Date& rhs) const{
 	return false;}
 }
 
+void Date::DateIncrease(){
+	_day++;
+	
+	if(_day>daysInMonth()){
+		_day =1;
+		int temp = static_cast<int> (_month);
+		 temp++;
+		 if(temp==13){
+			 _year++;
+			 temp =1;
+		 }
+		 _month= static_cast<Month> (temp);
+	}
+	return;
+}
+
 
 int Date::day() const
 {

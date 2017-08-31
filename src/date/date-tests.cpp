@@ -73,6 +73,27 @@ TEST_CASE("Identical Dates are Equal") {
 
 
 // Exercise 2.4
+TEST_CASE("Increase day in same month") {
+    Date date_1(1, Month::January, 2000);
+    Date date_2(2, Month::January, 2000);
+	date_1.DateIncrease();
+    CHECK(date_1 == date_2);
+}
+
+TEST_CASE("Increase to next month") {
+    Date date_1(31, Month::January, 2000);
+    Date date_2(1, Month::February, 2000);
+	date_1.DateIncrease();
+    CHECK(date_1 == date_2);
+}
+
+TEST_CASE("Increase year"){
+    Date date_1(31, Month::December, 2000);
+    Date date_2(1, Month::January, 2001);
+    date_1.DateIncrease();
+    CHECK(date_1 == date_2);
+}
+
 // Provide tests for a new member function of the Date class
 // which will increase the date by one day.
 
