@@ -31,6 +31,7 @@ public:
    Date(int day, Month month, int year);
    	bool operator==(const Date& rhs) const;
 	void DateIncrease();
+	static void setDefaultDate(int day, Month month, int year);
 	// return the day of the month
 	int	day () const;
 	// return the month of the year
@@ -47,6 +48,7 @@ private:
 	int	_day;
 	Month _month;
 	int	_year;
+    static Date _default;
 
 };
 

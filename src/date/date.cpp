@@ -15,12 +15,28 @@ else if(year < 0){
     }
 }
 
+Date::Date(){
+	_day = _default._day;
+    _month = _default._month;
+    _year = _default._year;
+}
+
+Date Date::_default{1, Month::January,1900};
+
 bool Date::operator==(const Date& rhs) const{
 	
 	if (_day == rhs._day && _month == rhs._month &&_year == rhs._year ){
 		return true;
 	}else{
 	return false;}
+}
+
+ void Date::setDefaultDate(int day, Month month, int year)
+{
+    _default._day = day;
+    _default._month = month;
+    _default._year = year;
+	return;
 }
 
 void Date::DateIncrease(){

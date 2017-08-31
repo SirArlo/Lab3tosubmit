@@ -99,5 +99,12 @@ TEST_CASE("Increase year"){
 
 
 // Exercise 2.5
+
+TEST_CASE("Default constructor works with changing default date") {
+Date date_1;
+date_1.setDefaultDate(12, Month::January, 2000);
+Date date_2;
+CHECK_FALSE(date_1 == date_2);
+}
 // Write tests for the new default constructor and the
 // setDefaultDate method.
